@@ -8,11 +8,17 @@ def batch_badge_creator(attendees)
   end
 end
 
-def room_assignments
-  attendees.collect do |attendee|
-    "Hello, #{attendee}! You'll be assigned to room #{attendee.index}!"
-end
+def assign_rooms(attendees)
+   attendees.each_with_index.collect do |attendee, index|
+    "Hello, #{attendee}! You'll be assigned to room #{index + 1}!"
+   end
 end
 
-def printer
+def printer(array)
+   batch_badge_creator(attendees).each do |list|
+    puts list
+  end
+   assign_rooms(attendees).each do |list2|
+    puts list2
+  end
 end
